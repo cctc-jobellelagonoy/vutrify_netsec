@@ -30,18 +30,6 @@ class JournalController extends Controller{
             'title' => 'required',
             'description' => 'required',
         ]);
-		
-		$request->user()->fill([
-			'title' => Hash::make($request->newPassword),
-			'description' => Hash::make($request->newPassword),
-		])->save();
-	
-	
-		/*
-        $request->validate([
-            'title' => Hash::make($request['title']),
-            'description' => Hash::make($request['description']),
-        ]);*/
   
         Journal::create($request->all());
 			
